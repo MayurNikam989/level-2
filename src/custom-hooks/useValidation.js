@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const useValidation = (values) => {
   const [errors, setErrors] = useState({});
@@ -20,7 +20,7 @@ const useValidation = (values) => {
       newErrors.phoneNumber = "Phone Number is required";
     } else if (isNaN(values.phoneNumber)) {
       newErrors.phoneNumber = "Phone Number must be a number";
-    } else if (values.phoneNumber.length != 10) {
+    } else if (values.phoneNumber.length !== 10) {
       newErrors.phoneNumber = "Phone Number should have 10 digits only";
     }
 
